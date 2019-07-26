@@ -19,6 +19,7 @@ RUN install2.r --error --deps TRUE \
     xts \
     tidyquant \
     caTools \
+    GGally \
     arules \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
