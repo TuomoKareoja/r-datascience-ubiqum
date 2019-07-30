@@ -6,11 +6,10 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/
 
-# Install additional r-packages
+# Install additional r-packages with suggestions
 RUN install2.r --error --deps TRUE \
     # need to install XLConnect explicitly before others to avoid dependency issues
     XLConnect \
-    caret \
     data.table \
     RSQLite \
     RMySQL \
@@ -19,11 +18,19 @@ RUN install2.r --error --deps TRUE \
     xts \
     tidyquant \
     caTools \
+    rpart \
     GGally \
     arules \
+    caret \
+    fastAdaboost \
+    xgboost \
+    glmnet \
+    Matrix \
+    ranger \
+    C50 \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # we do this separately wtihout stopping for erroes as depency iplot fill fail as the X11 variable is not set
-RUN install2.r --deps TRUE \
+RUN install2.r \
     arulesViz \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
