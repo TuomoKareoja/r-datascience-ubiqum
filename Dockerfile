@@ -22,6 +22,7 @@ RUN install2.r --error --deps TRUE \
     GGally \
     arules \
     caret \
+    caretEnsemble \
     fastAdaboost \
     xgboost \
     glmnet \
@@ -30,7 +31,7 @@ RUN install2.r --error --deps TRUE \
     C50 \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
-# we do this separately wtihout stopping for erroes as depency iplot fill fail as the X11 variable is not set
+# we do this separately wtihout stopping for erroes as the depency iplot fill fail as the X11 variable is not set
 RUN install2.r \
     arulesViz \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
