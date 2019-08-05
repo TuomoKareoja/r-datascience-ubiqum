@@ -31,6 +31,8 @@ RUN install2.r --error --deps TRUE \
     C50 \
     ROCR \
     ROCit \
+    # Better visualizations for decisions trees
+    rattle \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # we do this separately wtihout stopping for erroes as the depency iplot fill fail as the X11 variable is not set
