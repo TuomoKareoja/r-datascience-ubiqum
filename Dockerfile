@@ -33,6 +33,8 @@ RUN install2.r --error --deps TRUE \
     ROCit \
     # Better visualizations for decisions trees
     rattle \
+    # better plots for correlation matrices
+    corrplot \
     && rm -rf /tmp/downloaded_packages/ /tmp/*.rds
 
 # we do this separately wtihout stopping for erroes as the depency iplot fill fail as the X11 variable is not set
